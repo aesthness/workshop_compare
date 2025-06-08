@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 800">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <rect class="st0" x="50" y="625" width="400" height="25"/>
+  <rect class="st0" x="125" y="725" width="400" height="25"/>
+  <rect class="st0" x="575" y="150" width="25" height="475"/>
+  <rect class="st0" x="125" y="150" width="25" height="475"/>
+  <path class="st0" d="M600,625h-25v50c0,27.6-22.4,50-50,50h-25v25h25c41.4,0,75-33.6,75-75v-50Z"/>
+  <path class="st0" d="M425,650h25v25c0,27.6,22.4,50,50,50h25v25h-25c-41.4,0-75-33.6-75-75v-25Z"/>
+  <path class="st0" d="M50,650h25v25c0,27.6,22.4,50,50,50h25v25h-25c-41.4,0-75-33.6-75-75v-25Z"/>
+  <rect class="st0" x="600" y="150" width="150" height="25"/>
+  <rect class="st0" x="200" y="50" width="475" height="25"/>
+  <path class="st0" d="M125,150h25v-25c0-27.6,22.4-50,50-50h25v-25h-25c-41.4,0-75,33.6-75,75v25Z"/>
+  <path class="st0" d="M575,150h25v-25c0-27.6,22.4-50,50-50h25v-25h-25c-41.4,0-75,33.6-75,75v25Z"/>
+  <path class="st0" d="M750,150h-25v-25c0-27.6-22.4-50-50-50h-25v-25h25c41.4,0,75,33.6,75,75v25Z"/>
+</svg>
