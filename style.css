@@ -1,0 +1,370 @@
+@font-face {
+  font-family: "SM3 세명조";
+  src: url("font/SM3세명조-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM3 중명조";
+  src: url("font/SM3중명조-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM3 신신명조";
+  src: url("font/SM3신신명조-02.otf") format("opentype");
+  font-weight: 300;
+  font-style: light;
+}
+
+@font-face {
+  font-family: "SM3 신신명조";
+  src: url("font/SM3신신명조-03.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM3 신신명조";
+  src: url("font/SM3신신명조-04.otf") format("opentype");
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "SM3 신명조";
+  src: url("font/SM3신명조-02.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM3 신명조";
+  src: url("font/SM3신명조-03.otf") format("opentype");
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "SM3 태명조";
+  src: url("font/SM3태명조-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM3 견출명조";
+  src: url("font/SM3견출명조-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM 세명조";
+  src: url("font/SM세명조-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM 견출명조";
+  src: url("font/SM견출명조-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM 중명조";
+  src: url("font/SM중명조-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM 태명조";
+  src: url("font/SM3태명조-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM 신명조";
+  src: url("font/SM신명조-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM 신신명조";
+  src: url("font/SM신신명조-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM 견출명조";
+  src: url("font/SM신신명조10-Regular.otf") format("opentype");
+  font-weight: 500;
+  font-style: semibold;
+}
+
+@font-face {
+  font-family: "SM 순명조";
+  src: url("font/SM순명조-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.wrap {
+  width: 1080px;
+  height: 720px;
+  resize: both;
+  overflow: auto;
+  border: 1px solid #ccc;
+  position: relative;
+  width: 1080px;
+  height: 720px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+/* 가운데 블러만 적용된 세로 영역 */
+.center-blur {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 60px; /* 그림자 너비, 취향에 따라 조절 */
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.12) 45%,
+    rgba(0, 0, 0, 0.18) 50%,
+    rgba(0, 0, 0, 0.12) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.pdf-button {
+  background-color: #e63946;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pdf-button:hover {
+  background-color: #c92c3e;
+  box-shadow: 0 6px 16px rgba(230, 57, 70, 0.4);
+}
+
+.text-container {
+  position: relative;
+  flex: 1 1 0;
+  max-width: 100%;
+  min-width: 150px;
+  padding: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+}
+
+.text-content {
+  font-size: 24px;
+  line-height: 1.6;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin: 0 20px 20px 20px;
+  margin-top: 50px; /* nav 높이만큼 아래로 */
+}
+.nav {
+  position: fixed;
+  left: 50%;
+  bottom: 32px; /* 하단에서 띄우는 거리 */
+  transform: translateX(-50%);
+  min-width: 800px; /* 필요시 조절 */
+  max-width: 90%;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  border: 1px solid rgba(200, 200, 200, 0);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  padding: 0 14px;
+}
+
+.nav-divider {
+  width: 1px;
+  height: 40%; /* nav 높이에 비례한 길이 */
+  background-color: rgba(0, 0, 0, 0.35); /* 은은한 회색 */
+  margin: 0 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.divider {
+  border-top: 1.5px solid rgba(153, 153, 153, 0.3);
+  margin: 12px 0;
+}
+
+.nav button,
+.nav select {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(180, 180, 180, 0.4);
+  border-radius: 12px;
+  padding: 10px 35px;
+  font-size: 16px;
+  color: #111;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+.nav button:hover,
+.nav select:hover {
+  background-color: rgba(240, 240, 240, 0.9);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.custom-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23666'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px;
+  padding-right: 32px;
+}
+
+#LeftspacingPopup,
+#RightspacingPopup {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 110px; /* nav 높이(64px) + 여유 공간 (예: 32px + 14px) */
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(180, 180, 180, 0.5);
+  border-radius: 16px;
+  padding: 15px 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(14px);
+  z-index: 1000;
+  width: 250px;
+  font-size: 14px;
+}
+
+#LeftspacingPopup {
+  left: 35%;
+  transform: translateX(-50%);
+}
+
+#RightspacingPopup {
+  left: 70%;
+  transform: translateX(-50%);
+}
+
+.hidden {
+  display: none;
+}
+
+.spacing-divider {
+  border-top: 1.5px solid rgba(153, 153, 153, 0.3);
+  margin: 12px 0;
+}
+
+.spacing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 6px;
+}
+
+.spacing-row input {
+  height: 25px; /* 너무 길지 않게 줄임 */
+  border: none;
+  font-size: 16px;
+  width: 60px;
+  padding: 2px 4px;
+}
+
+.spacing-row span {
+  min-width: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spacing-row button {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  min-width: 60px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.button-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.button-column button {
+  padding: 3px 30px;
+  font-size: 14px;
+  min-width: auto;
+  width: 32px;
+  height: 25px;
+}
+
+.spacing-row button:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resizer {
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  cursor: ew-resize;
+  z-index: 10;
+  background: transparent;
+}
+
+.resizer-right {
+  right: 0;
+}
+
+.resizer-left {
+  left: 0;
+}
