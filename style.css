@@ -1,118 +1,118 @@
 @font-face {
   font-family: "SM3 세명조";
-  src: url("font/SM3세명조-Regular.otf") format("opentype");
+  src: url("SM3세명조-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SM3 중명조";
-  src: url("font/SM3중명조-Regular.otf") format("opentype");
+  src: url("SM3중명조-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SM3 신신명조";
-  src: url("font/SM3신신명조-02.otf") format("opentype");
+  src: url("SM3신신명조-02.otf") format("opentype");
   font-weight: 300;
   font-style: light;
 }
 
 @font-face {
   font-family: "SM3 신신명조";
-  src: url("font/SM3신신명조-03.otf") format("opentype");
+  src: url("SM3신신명조-03.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SM3 신신명조";
-  src: url("font/SM3신신명조-04.otf") format("opentype");
+  src: url("SM3신신명조-04.otf") format("opentype");
   font-weight: 700;
   font-style: bold;
 }
 
 @font-face {
   font-family: "SM3 신명조";
-  src: url("font/SM3신명조-02.otf") format("opentype");
+  src: url("SM3신명조-02.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SM3 신명조";
-  src: url("font/SM3신명조-03.otf") format("opentype");
+  src: url("SM3신명조-03.otf") format("opentype");
   font-weight: 700;
   font-style: bold;
 }
 
 @font-face {
   font-family: "SM3 태명조";
-  src: url("font/SM3태명조-Regular.otf") format("opentype");
+  src: url("SM3태명조-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SM3 견출명조";
-  src: url("font/SM3견출명조-Regular.otf") format("opentype");
+  src: url("SM3견출명조-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SM 세명조";
-  src: url("font/SM세명조-Regular.otf") format("opentype");
+  src: url("SM세명조-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SM 견출명조";
-  src: url("font/SM견출명조-Regular.otf") format("opentype");
+  src: url("SM견출명조-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SM 중명조";
-  src: url("font/SM중명조-Regular.otf") format("opentype");
+  src: url("SM중명조-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SM 태명조";
-  src: url("font/SM3태명조-Regular.otf") format("opentype");
+  src: url("SM3태명조-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SM 신명조";
-  src: url("font/SM신명조-Regular.otf") format("opentype");
+  src: url("SM신명조-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SM 신신명조";
-  src: url("font/SM신신명조-Regular.otf") format("opentype");
+  src: url("SM신신명조-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "SM 견출명조";
-  src: url("font/SM신신명조10-Regular.otf") format("opentype");
+  font-family: "SM 명조";
+  src: url("SM신신명조10-Regular.otf") format("opentype");
   font-weight: 500;
   font-style: semibold;
 }
 
 @font-face {
   font-family: "SM 순명조";
-  src: url("font/SM순명조-Regular.otf") format("opentype");
+  src: url("SM순명조-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
