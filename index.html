@@ -1,377 +1,412 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=1080, initial-scale=1.0"/>
-  <title>Ink And Paper</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Georgia&family=Arial&display=swap" rel="stylesheet">
-  <link rel="icon" href="icon.svg" type="image/svg">
-  <style>
-    @font-face {
-    font-family: 'SM3 신신명조';
-    src: url('font/SM3신신명조-02.otf') format('opentype');
-    font-weight: 300;
-    font-style: light;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, initial-scale=1.0" />
+    <title>Ink And Paper</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Georgia&family=Arial&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="icon.svg"
+      type="image/svg"
+    />
+  </head>
+  <body>
+    <header class="apple-navbar">
+      <div class="NavLogo">
+        <img
+          src="IconNav.svg"
+          alt="Ink And Paper Logo"
+        />
+        <div class="apple-logo">스크린과 종이 사이</div>
+      </div>
+      <button class="apple-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
 
-@font-face {
-    font-family: 'SM3 신신명조';
-    src: url('font/SM3신신명조-03.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-  }  
+    <aside class="apple-sidebar" id="sidebar">
+      <button class="apple-close" id="closeBtn">×</button>
+      <nav class="apple-menu">
+        <a href="https://aesthness.github.io/workshop_book/">홈</a>
+        <a href="https://aesthness.github.io/workshop_compare/">폰트 비교하기</a>
+        <a href="https://aesthness.github.io/workshop_detail/">폰트 실험실</a>
+      </nav>
+    </aside>
+    <button id="savePdfButton" class="pdf-button">
+      <i class="fas fa-file-pdf"></i> PDF 저장
+    </button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
-@font-face {
-    font-family: 'SM3 신신명조';
-    src: url('font/SM3신신명조-04.otf') format('opentype');
-    font-weight: 700;
-    font-style: bold;
-  }
+    <div class="wrap">
+      <div class="center-blur"></div>
 
+      <!-- 왼쪽 텍스트 영역 -->
+      <div class="text-container left-text">
+        <div id="leftText" class="text-content" contenteditable="true">
+          <p id="content" contenteditable="true">
+            세종임금님이 만든 ‘한글’은 나라의 공식 글자가 아니었습니다. 신하들의
+            반대가 거셌기 때문입니다. 그래서 한글은 궁과 여성과 불교를 중심으로
+            서서히 퍼졌습니다. 한글이 만들어진 지 400년 정도 흐른 뒤에, 한글
+            소설이 온 나라에 유행했습니다. 한글이 대중 속에 자리를
+            잡았습니다.<br />
 
-@font-face {
-  font-family: 'SM3 신명조';
-  src: url('font/SM3신명조-02.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
+            <br />나라의 기운이 쇠하면서 주체적인 모습을 보이기 위해서
+            고종임금님은 1894년 월에 한글을 나라의 공식 글자로 발표했습니다.
+            그러나 결국 나라는 빼앗겼고 한글은 사라질 위기에 처했습니다. 뜻 있는
+            사람들이 한글로 민족의식을 모았고, 한글을 지켜냈습니다. 한글은
+            민족(나라)을 하나로 묶어주는 역할을 했습니다.<br />
 
-@font-face {
-  font-family: 'SM3 신명조';
-  src: url('font/SM3신명조-03.otf') format('opentype');
-  font-weight: 700;
-  font-style: bold;
-}
+            <br />나라를 찾은 지 몇 해 되지 않아 일어난 전쟁과 전쟁 복구 중에는
+            생존에 집중해야 했습니다. 또 그 뒤 오랫동안은 잘살아 보겠다는
+            일념으로 한글문화를 살필 겨를이 없었습니다. 그 사이 몇몇 한글 교육에
+            힘쓴 분들과 뛰어난 조형감각을 갖춘 분들에 의해서, 한글 조형은 아주
+            조금씩 나아졌습니다.<br />
 
-body {
-      font-family: 'SM3 신신명조';
-      font-weight: 300;
-      margin: 0;
-      background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .wrap {
-      resize: both;
-      overflow: auto;
-      border: 1px solid #ccc;
-      position: relative;
-      width: 1080px;
-      height: 720px;
-      background-color: #fff;
-      display: flex;
-      flex-direction: row;
-      overflow: hidden;
-    }
+            <br />이제 한글을 빼앗길 걱정이나 생명의 위협으로부터 상당히
+            벗어났지만, 여전히 우리는 더 잘 살아야 한다는 마음이 가득합니다.
+            저는 한글 시각 문화가 백 년 전보다 크게 나아지지 않았다고
+            느낍니다.<br />
 
-   .page-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(0,0,0,0.12);
-      color: #ffffff;
-      font-size: 2.5rem;
-      cursor: pointer;
-      z-index: 1001;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-      transition: background 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      user-select: none;
-    }
-    .page-arrow.left  { left: 80px; }
-    .page-arrow.right { right: 80px; }
-    .page-arrow:hover { background: rgba(0, 204, 255, 0.22); color: #00c3ff; }
+            <br />요즘 발표되는 다양한 한글 조형을 보면 한글 시각 문화가 꽃핀
+            듯하지만, 아직 우리가 무엇을 하고 있는지 어디로 나아가야 하는지,
+            선명하지 않아 보입니다. 앞으로 다양한 한글 글자체는 어떻게 해야 만들
+            수 있는지, 한글 타이포그래피의 정체성은 어떻게 만들어야 할지, 한글의
+            고유한 멋과 아름다움이 무엇인지, 그럼 나는 어떤 시도를 해야 할지
+            모르겠습니다. 지금은 그냥 한 사람 한 사람이 각자 가진 능력으로
+            한글을, 또는 한글로 디자인할 뿐, 함께 나아갈 방향을 고민하고 찾지는
+            못하고 있습니다.<br />
 
+            <br />푸념 같지만, 150년 전 즈음 한글 소설에 다양한 한글 글자체가
+            나타났던 때로 돌아가서 어떻게 그런 모습의 글자체를 만들 수 있었는지
+            보고 싶습니다. 아니면 세로쓰기가 소멸해가던 과정을 보고 싶습니다. 또
+            아니면 글씨 쓰는 문화를 왜 지키지 못했는지 보고 싶습니다. 이런 것을
+            보고 돌아와서, 내가 무엇을 놓치고 있는지, 무엇을 해야 하는지 알고
+            싶습니다. 그러면 자연히 지금 당장 해야 할 일도 알 수 있을
+            테니까요.<br />
+          </p>
+        </div>
+        <div class="resizer resizer-left"></div>
+      </div>
 
-    /* 가운데 블러만 적용된 세로 영역 */
-    .center-blur {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 60px; /* 그림자 너비, 취향에 따라 조절 */
-        transform: translateX(-50%);
-        background: linear-gradient(
-            to right,
-            rgba(0,0,0,0) 0%,
-            rgba(0,0,0,0.12) 45%,
-            rgba(0,0,0,0.18) 50%,
-            rgba(0,0,0,0.12) 55%,
-            rgba(0,0,0,0) 100%
-        );
-        z-index: 1000;
-        pointer-events: none;
-    }
+      <!-- 오른쪽 텍스트 영역 -->
+      <div class="text-container right-text">
+        <div id="rightText" class="text-content" contenteditable="true">
+          <p id="content" contenteditable="true">
+            세종임금님이 만든 ‘한글’은 나라의 공식 글자가 아니었습니다. 신하들의
+            반대가 거셌기 때문입니다. 그래서 한글은 궁과 여성과 불교를 중심으로
+            서서히 퍼졌습니다. 한글이 만들어진 지 400년 정도 흐른 뒤에, 한글
+            소설이 온 나라에 유행했습니다. 한글이 대중 속에 자리를
+            잡았습니다.<br />
 
-    .text-container {
-      position: relative;
-      flex: 1 1 0;
-      max-width: 100%;
-      min-width: 150px;
-      padding: 0;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      background-color: rgba(255, 255, 255, 0.9);
-      box-sizing: border-box;
-    }
+            <br />나라의 기운이 쇠하면서 주체적인 모습을 보이기 위해서
+            고종임금님은 1894년 월에 한글을 나라의 공식 글자로 발표했습니다.
+            그러나 결국 나라는 빼앗겼고 한글은 사라질 위기에 처했습니다. 뜻 있는
+            사람들이 한글로 민족의식을 모았고, 한글을 지켜냈습니다. 한글은
+            민족(나라)을 하나로 묶어주는 역할을 했습니다.<br />
 
-    .text-content {
-      font-size: 24px;
-      line-height: 1.6;
-      flex-grow: 1;
-      overflow-y: auto;
-      margin: 0 20px 20px 20px;
-      margin-top: 50px; /* nav 높이만큼 아래로 */
-    }
-    .nav {
-      width: calc(100% - 50px);
-      height: 64px;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 15px;
-      border: 1px solid rgba(200, 200, 200, 0.);
-      backdrop-filter: blur(4px);
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      z-index: 2;
-    }
-    .nav button,
-    .nav select {
-      background-color: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(180, 180, 180, 0.4);
-      border-radius: 12px;
-      padding: 10px 40px;
-      font-size: 16px;
-      color: #111;
-      transition: all 0.2s ease;
-      backdrop-filter: blur(4px);
-    }
-    .nav button:hover,
-    .nav select:hover {
-      background-color: rgba(240, 240, 240, 0.9);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-    .custom-select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23666'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      background-size: 12px;
-      padding-right: 32px;
-    }
+            <br />나라를 찾은 지 몇 해 되지 않아 일어난 전쟁과 전쟁 복구 중에는
+            생존에 집중해야 했습니다. 또 그 뒤 오랫동안은 잘살아 보겠다는
+            일념으로 한글문화를 살필 겨를이 없었습니다. 그 사이 몇몇 한글 교육에
+            힘쓴 분들과 뛰어난 조형감각을 갖춘 분들에 의해서, 한글 조형은 아주
+            조금씩 나아졌습니다.<br />
 
-    .resizer {
-        position: absolute;
-        top: 0;
-        width: 8px;
-        height: 100%;
-        cursor: ew-resize;
-        z-index: 10;
-        background: transparent;
-    }
+            <br />이제 한글을 빼앗길 걱정이나 생명의 위협으로부터 상당히
+            벗어났지만, 여전히 우리는 더 잘 살아야 한다는 마음이 가득합니다.
+            저는 한글 시각 문화가 백 년 전보다 크게 나아지지 않았다고
+            느낍니다.<br />
 
-    .resizer-right {
-        right: 0;
-    }
+            <br />요즘 발표되는 다양한 한글 조형을 보면 한글 시각 문화가 꽃핀
+            듯하지만, 아직 우리가 무엇을 하고 있는지 어디로 나아가야 하는지,
+            선명하지 않아 보입니다. 앞으로 다양한 한글 글자체는 어떻게 해야 만들
+            수 있는지, 한글 타이포그래피의 정체성은 어떻게 만들어야 할지, 한글의
+            고유한 멋과 아름다움이 무엇인지, 그럼 나는 어떤 시도를 해야 할지
+            모르겠습니다. 지금은 그냥 한 사람 한 사람이 각자 가진 능력으로
+            한글을, 또는 한글로 디자인할 뿐, 함께 나아갈 방향을 고민하고 찾지는
+            못하고 있습니다.<br />
 
-    .resizer-left {
-        left: 0;
-    }
-  </style>
-</head>
-<body>
-  <button onclick="saveAsPDF()">PDF로 저장</button>
-    <button class="page-arrow left" onclick="location.href=''" aria-label="이전 페이지">&lt;</button>
-  <div class="wrap">
-    <div class="center-blur"></div>
-    <!-- 왼쪽 텍스트 영역 -->
-    <div class="text-container left-text">
-      <div class="nav">
+            <br />푸념 같지만, 150년 전 즈음 한글 소설에 다양한 한글 글자체가
+            나타났던 때로 돌아가서 어떻게 그런 모습의 글자체를 만들 수 있었는지
+            보고 싶습니다. 아니면 세로쓰기가 소멸해가던 과정을 보고 싶습니다. 또
+            아니면 글씨 쓰는 문화를 왜 지키지 못했는지 보고 싶습니다. 이런 것을
+            보고 돌아와서, 내가 무엇을 놓치고 있는지, 무엇을 해야 하는지 알고
+            싶습니다. 그러면 자연히 지금 당장 해야 할 일도 알 수 있을
+            테니까요.<br />
+          </p>
+        </div>
+        <div class="resizer resizer-right"></div>
+      </div>
+    </div>
+
+    <!-- 폰트 및 조절 툴 -->
+    <div class="nav">
+      <div class="nav-left">
         <select id="leftFontSelector" class="custom-select">
-          <option value="SM3 신신명조">SM3 신신명조</option>
+          <option value="SM3 세명조">SM3 세명조</option>
+          <option value="SM3 중명조">SM3 중명조</option>
           <option value="SM3 신명조">SM3 신명조</option>
+          <option value="SM3 신신명조">SM3 신신명조</option>
+          <option value="SM3 태명조">SM3 태명조</option>
+          <option value="SM3 견출명조">SM3 견출명조</option>
+          <option value="SM 세명조">SM 세명조</option>
+          <option value="SM 중명조">SM 중명조</option>
+          <option value="SM 순명조">SM 순명조</option>
+          <option value="SM 신명조">SM 신명조</option>
+          <option value="SM 신신명조">SM 신신명조</option>
+          <option value="SM 태명조">SM 태명조</option>
+          <option value="SM 견출명조">SM 견출명조</option>
           <option value="'Noto Sans KR', sans-serif">Noto Sans KR</option>
-          <option value="Georgia, serif">Georgia</option>
-          <option value="Arial, sans-serif">Arial</option>
         </select>
+        <button onclick="toggleSpacingPopup('left')">&#9776;</button>
+        <button onclick="resetFont('left')">reset</button>
+      </div>
+
+      <div class="nav-divider"></div>
+
+      <div class="nav-right">
+        <select id="rightFontSelector" class="custom-select">
+          <option value="SM3 세명조">SM3 세명조</option>
+          <option value="SM3 중명조">SM3 중명조</option>
+          <option value="SM3 신명조">SM3 신명조</option>
+          <option value="SM3 신신명조">SM3 신신명조</option>
+          <option value="SM3 태명조">SM3 태명조</option>
+          <option value="SM3 견출명조">SM3 견출명조</option>
+          <option value="SM 세명조">SM 세명조</option>
+          <option value="SM 중명조">SM 중명조</option>
+          <option value="SM 순명조">SM 순명조</option>
+          <option value="SM 신명조">SM 신명조</option>
+          <option value="SM 신신명조">SM 신신명조</option>
+          <option value="SM 태명조">SM 태명조</option>
+          <option value="SM 견출명조">SM 견출명조</option>
+          <option value="'Noto Sans KR', sans-serif">Noto Sans KR</option>
+        </select>
+        <button onclick="toggleSpacingPopup('right')">&#9776;</button>
+        <button onclick="resetFont('right')">reset</button>
+      </div>
+    </div>
+
+    <!-- 좌측 팝업 -->
+    <div id="LeftspacingPopup" class="hidden">
+      <div class="spacing-row">
+        <span>폰트 크기</span>
         <button onclick="changeFontSize('left', -2)">-</button>
         <span id="leftFontSizeDisplay">20px</span>
         <button onclick="changeFontSize('left', 2)">+</button>
       </div>
-      <div id="leftText" class="text-content" contenteditable="true">
-        세종임금님이 만든 ‘한글’은 나라의 공식 글자가 아니었습니다. 신하들의 반대가 거셌기 때문입니다. 그래서 한글은 궁과 여성과 불교를 중심으로 서서히 퍼졌습니다. 한글이 만들어진 지 400년 정도 흐른 뒤에, 한글 소설이 온 나라에 유행했습니다. 한글이 대중 속에 자리를 잡았습니다.<br>
 
-      <br>나라의 기운이 쇠하면서 주체적인 모습을 보이기 위해서 고종임금님은 1894년 월에 한글을 나라의 공식 글자로 발표했습니다. 그러나 결국 나라는 빼앗겼고 한글은 사라질 위기에 처했습니다. 뜻 있는 사람들이 한글로 민족의식을 모았고, 한글을 지켜냈습니다. 한글은 민족(나라)을 하나로 묶어주는 역할을 했습니다.<br>
+      <div class="divider"></div>
 
-      <br>나라를 찾은 지 몇 해 되지 않아 일어난 전쟁과 전쟁 복구 중에는 생존에 집중해야 했습니다. 또 그 뒤 오랫동안은 잘살아 보겠다는 일념으로 한글문화를 살필 겨를이 없었습니다. 그 사이 몇몇 한글 교육에 힘쓴 분들과 뛰어난 조형감각을 갖춘 분들에 의해서, 한글 조형은 아주 조금씩 나아졌습니다.<br>
-
-      <br>이제 한글을 빼앗길 걱정이나 생명의 위협으로부터 상당히 벗어났지만, 여전히 우리는 더 잘 살아야 한다는 마음이 가득합니다. 저는 한글 시각 문화가 백 년 전보다 크게 나아지지 않았다고 느낍니다.<br>
-
-      <br>요즘 발표되는 다양한 한글 조형을 보면 한글 시각 문화가 꽃핀 듯하지만, 아직 우리가 무엇을 하고 있는지 어디로 나아가야 하는지, 선명하지 않아 보입니다. 앞으로 다양한 한글 글자체는 어떻게 해야 만들 수 있는지, 한글 타이포그래피의 정체성은 어떻게 만들어야 할지, 한글의 고유한 멋과 아름다움이 무엇인지, 그럼 나는 어떤 시도를 해야 할지 모르겠습니다. 지금은 그냥 한 사람 한 사람이 각자 가진 능력으로 한글을, 또는 한글로 디자인할 뿐, 함께 나아갈 방향을 고민하고 찾지는 못하고 있습니다.<br>
-
-      <br>푸념 같지만, 150년 전 즈음 한글 소설에 다양한 한글 글자체가 나타났던 때로 돌아가서 어떻게 그런 모습의 글자체를 만들 수 있었는지 보고 싶습니다. 아니면 세로쓰기가 소멸해가던 과정을 보고 싶습니다. 또 아니면 글씨 쓰는 문화를 왜 지키지 못했는지 보고 싶습니다. 이런 것을 보고 돌아와서, 내가 무엇을 놓치고 있는지, 무엇을 해야 하는지 알고 싶습니다. 그러면 자연히 지금 당장 해야 할 일도 알 수 있을 테니까요.<br>
+      <div class="spacing-row">
+        <span>자간</span>
+        <input type="number" id="leftLetterSpacingInput" value="0" step="0.5" />
+        <div class="button-column">
+          <button onclick="changeLetterSpacing('left', 0.5)">+</button>
+          <button onclick="changeLetterSpacing('left', -0.5)">-</button>
+        </div>
       </div>
-      <div class="resizer resizer-left"></div>
-    </div> 
-    <!-- 오른쪽 텍스트 영역 -->
-    <div class="text-container right-text">
-      <div class="nav">
-        <select id="rightFontSelector" class="custom-select">
-          <option value="SM3 신신명조">SM3 신신명조</option>
-          <option value="SM3 신명조">SM3 신명조</option>
-          <option value="'Noto Sans KR', sans-serif">Noto Sans KR</option>
-          <option value="Georgia, serif">Georgia</option>
-          <option value="Arial, sans-serif">Arial</option>
-        </select>
-        
+
+      <div class="divider"></div>
+
+      <div class="spacing-row">
+        <span>행간</span>
+        <input type="number" id="leftLineHeightInput" value="1.6" step="0.1" />
+        <div class="button-column">
+          <button onclick="changeLineHeight('left', 0.1)">+</button>
+          <button onclick="changeLineHeight('left', -0.1)">-</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 우측 팝업 -->
+    <div id="RightspacingPopup" class="hidden">
+      <div class="spacing-row">
+        <span>폰트 크기</span>
         <button onclick="changeFontSize('right', -2)">-</button>
         <span id="rightFontSizeDisplay">20px</span>
         <button onclick="changeFontSize('right', 2)">+</button>
       </div>
-      <div id="rightText" class="text-content" contenteditable="true">
-        세종임금님이 만든 ‘한글’은 나라의 공식 글자가 아니었습니다. 신하들의 반대가 거셌기 때문입니다. 그래서 한글은 궁과 여성과 불교를 중심으로 서서히 퍼졌습니다. 한글이 만들어진 지 400년 정도 흐른 뒤에, 한글 소설이 온 나라에 유행했습니다. 한글이 대중 속에 자리를 잡았습니다.<br>
 
-      <br>나라의 기운이 쇠하면서 주체적인 모습을 보이기 위해서 고종임금님은 1894년 월에 한글을 나라의 공식 글자로 발표했습니다. 그러나 결국 나라는 빼앗겼고 한글은 사라질 위기에 처했습니다. 뜻 있는 사람들이 한글로 민족의식을 모았고, 한글을 지켜냈습니다. 한글은 민족(나라)을 하나로 묶어주는 역할을 했습니다.<br>
+      <div class="divider"></div>
 
-      <br>나라를 찾은 지 몇 해 되지 않아 일어난 전쟁과 전쟁 복구 중에는 생존에 집중해야 했습니다. 또 그 뒤 오랫동안은 잘살아 보겠다는 일념으로 한글문화를 살필 겨를이 없었습니다. 그 사이 몇몇 한글 교육에 힘쓴 분들과 뛰어난 조형감각을 갖춘 분들에 의해서, 한글 조형은 아주 조금씩 나아졌습니다.<br>
-
-      <br>이제 한글을 빼앗길 걱정이나 생명의 위협으로부터 상당히 벗어났지만, 여전히 우리는 더 잘 살아야 한다는 마음이 가득합니다. 저는 한글 시각 문화가 백 년 전보다 크게 나아지지 않았다고 느낍니다.<br>
-
-      <br>요즘 발표되는 다양한 한글 조형을 보면 한글 시각 문화가 꽃핀 듯하지만, 아직 우리가 무엇을 하고 있는지 어디로 나아가야 하는지, 선명하지 않아 보입니다. 앞으로 다양한 한글 글자체는 어떻게 해야 만들 수 있는지, 한글 타이포그래피의 정체성은 어떻게 만들어야 할지, 한글의 고유한 멋과 아름다움이 무엇인지, 그럼 나는 어떤 시도를 해야 할지 모르겠습니다. 지금은 그냥 한 사람 한 사람이 각자 가진 능력으로 한글을, 또는 한글로 디자인할 뿐, 함께 나아갈 방향을 고민하고 찾지는 못하고 있습니다.<br>
-
-      <br>푸념 같지만, 150년 전 즈음 한글 소설에 다양한 한글 글자체가 나타났던 때로 돌아가서 어떻게 그런 모습의 글자체를 만들 수 있었는지 보고 싶습니다. 아니면 세로쓰기가 소멸해가던 과정을 보고 싶습니다. 또 아니면 글씨 쓰는 문화를 왜 지키지 못했는지 보고 싶습니다. 이런 것을 보고 돌아와서, 내가 무엇을 놓치고 있는지, 무엇을 해야 하는지 알고 싶습니다. 그러면 자연히 지금 당장 해야 할 일도 알 수 있을 테니까요.<br>
+      <div class="spacing-row">
+        <span>자간</span>
+        <input
+          type="number"
+          id="rightLetterSpacingInput"
+          value="0"
+          step="0.5"
+        />
+        <div class="button-column">
+          <button onclick="changeLetterSpacing('right', 0.5)">+</button>
+          <button onclick="changeLetterSpacing('right', -0.5)">-</button>
+        </div>
       </div>
-      <div class="resizer resizer-right"></div>
+
+      <div class="divider"></div>
+
+      <div class="spacing-row">
+        <span>행간</span>
+        <input type="number" id="rightLineHeightInput" value="1.6" step="0.1" />
+        <div class="button-column">
+          <button onclick="changeLineHeight('right', 0.1)">+</button>
+          <button onclick="changeLineHeight('right', -0.1)">-</button>
+        </div>
+      </div>
     </div>
-  </div>
-  <!-- 오른쪽 화살표 (다음 페이지) -->
-  <button class="page-arrow right" onclick="location.href='' aria-label="다음 페이지">&gt;</button>
-  <script>
-    // 초기 폰트 크기
-    let leftFontSize = 20;
-    let rightFontSize = 20;
-    // 폰트 변경 이벤트
-    document.getElementById('leftFontSelector').addEventListener('change', function() {
-      document.getElementById('leftText').style.fontFamily = this.value;
-    });
-    document.getElementById('rightFontSelector').addEventListener('change', function() {
-      document.getElementById('rightText').style.fontFamily = this.value;
-    });
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      let leftFontSize = 20;
+      let rightFontSize = 20;
 
-    // 폰트 크기 조절 함수
-    function changeFontSize(side, diff) {
-      if (side === 'left') {
-        leftFontSize = Math.max(10, leftFontSize + diff);
-        document.getElementById('leftText').style.fontSize = leftFontSize + 'px';
-        document.getElementById('leftFontSizeDisplay').textContent = leftFontSize + 'px';
-      } else {
-        rightFontSize = Math.max(10, rightFontSize + diff);
-        document.getElementById('rightText').style.fontSize = rightFontSize + 'px';
-        document.getElementById('rightFontSizeDisplay').textContent = rightFontSize + 'px';
-      }
-    }
+      document
+        .getElementById("leftFontSelector")
+        .addEventListener("change", function () {
+          document.getElementById("leftText").style.fontFamily = this.value;
+        });
+      document
+        .getElementById("rightFontSelector")
+        .addEventListener("change", function () {
+          document.getElementById("rightText").style.fontFamily = this.value;
+        });
 
-   window.addEventListener('DOMContentLoaded', function() {
-      const wrap = document.querySelector('.wrap');
-      const leftContainer = document.querySelector('.left-text');
-      const rightContainer = document.querySelector('.right-text');
-      const leftResizer = leftContainer.querySelector('.resizer-left');
-      const rightResizer = rightContainer.querySelector('.resizer-right');
-
-      // wrap의 중앙 기준으로 초기화
-      function setInitialWidths() {
-        const wrapRect = wrap.getBoundingClientRect();
-        const half = Math.floor(wrapRect.width / 2);
-        leftContainer.style.width = half + 'px';
-        rightContainer.style.width = (wrapRect.width - half) + 'px';
-      }
-      setInitialWidths();
-
-      // 왼쪽 리사이저: 왼쪽만 조절, 중앙(오른쪽)은 고정
-      leftResizer.addEventListener('mousedown', function(e) {
-        e.preventDefault();
-        const wrapRect = wrap.getBoundingClientRect();
-        const startX = e.clientX;
-        const startLeftWidth = leftContainer.offsetWidth;
-        document.body.style.cursor = 'ew-resize';
-
-        function onMouseMove(ev) {
-          let dx = startX - ev.clientX;
-          let newLeftWidth = startLeftWidth + dx;
-          // 최소/최대값 제한
-          const min = 150;
-          const max = wrapRect.width / 2;
-          if (newLeftWidth < min) newLeftWidth = min;
-          if (newLeftWidth > max) newLeftWidth = max;
-          leftContainer.style.width = newLeftWidth + 'px';
-          rightContainer.style.width = (wrapRect.width - newLeftWidth) + 'px';
+      function changeFontSize(side, diff) {
+        if (side === "left") {
+          leftFontSize = Math.max(10, leftFontSize + diff);
+          document.getElementById("leftText").style.fontSize =
+            leftFontSize + "px";
+          document.getElementById("leftFontSizeDisplay").textContent =
+            leftFontSize + "px";
+        } else {
+          rightFontSize = Math.max(10, rightFontSize + diff);
+          document.getElementById("rightText").style.fontSize =
+            rightFontSize + "px";
+          document.getElementById("rightFontSizeDisplay").textContent =
+            rightFontSize + "px";
         }
-        function onMouseUp() {
-          document.removeEventListener('mousemove', onMouseMove);
-          document.removeEventListener('mouseup', onMouseUp);
-          document.body.style.cursor = '';
-        }
-        document.addEventListener('mousemove', onMouseMove);
-        document.addEventListener('mouseup', onMouseUp);
+      }
+
+      document.getElementById("savePdfButton").addEventListener("click", () => {
+        const element = document.querySelector(".wrap");
+
+        const widthPx = element.offsetWidth;
+        const heightPx = element.offsetHeight;
+        const pxToMm = 0.264583;
+        const widthMm = widthPx * pxToMm;
+        const heightMm = heightPx * pxToMm;
+
+        const opt = {
+          margin: 0,
+          filename: "document.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: {
+            unit: "mm",
+            format: [widthMm, heightMm],
+            orientation: "portrait",
+          },
+        };
+
+        html2pdf().set(opt).from(element).save();
       });
 
-      // 오른쪽 리사이저: 오른쪽만 조절, 중앙(왼쪽)은 고정
-      rightResizer.addEventListener('mousedown', function(e) {
-        e.preventDefault();
-        const wrapRect = wrap.getBoundingClientRect();
-        const startX = e.clientX;
-        const startRightWidth = rightContainer.offsetWidth;
-        document.body.style.cursor = 'ew-resize';
+      function changeLetterSpacing(side, diff) {
+        const input = document.getElementById(side + "LetterSpacingInput");
+        let value = parseFloat(input.value) || 0;
+        value = Math.round((value + diff) * 10) / 10;
+        input.value = value;
+        document.getElementById(side + "Text").style.letterSpacing =
+          value + "px";
+      }
 
-        function onMouseMove(ev) {
-          let dx = ev.clientX - startX;
-          let newRightWidth = startRightWidth + dx;
-          // 최소/최대값 제한
-          const min = 150;
-          const max = wrapRect.width / 2;
-          if (newRightWidth < min) newRightWidth = min;
-          if (newRightWidth > max) newRightWidth = max;
-          rightContainer.style.width = newRightWidth + 'px';
-          leftContainer.style.width = (wrapRect.width - newRightWidth) + 'px';
+      function changeLineHeight(side, diff) {
+        const input = document.getElementById(side + "LineHeightInput");
+        let value = parseFloat(input.value) || 1.6;
+        value = Math.round((value + diff) * 10) / 10;
+        input.value = value;
+        document.getElementById(side + "Text").style.lineHeight = value;
+      }
+
+      function toggleSpacingPopup(side) {
+        const popup = document.getElementById(
+          side === "left" ? "LeftspacingPopup" : "RightspacingPopup"
+        );
+        popup.classList.toggle("hidden");
+      }
+
+      function resetFont(side) {
+        const wrap = document.querySelector(".wrap");
+        const text = document.getElementById(side + "Text");
+        wrap.style.width = "1080px";
+        wrap.style.height = "720px";
+        text.style.fontSize = "20px";
+        text.style.letterSpacing = "0px";
+        text.style.lineHeight = "1.6";
+        text.style.fontFamily = "'Noto Sans KR', sans-serif";
+        if (side === "left") {
+          leftFontSize = 20;
+          document.getElementById("leftFontSizeDisplay").textContent = "20px";
+          document.getElementById("leftLetterSpacingInput").value = "0";
+          document.getElementById("leftLineHeightInput").value = "1.6";
+        } else {
+          rightFontSize = 20;
+          document.getElementById("rightFontSizeDisplay").textContent = "20px";
+          document.getElementById("rightLetterSpacingInput").value = "0";
+          document.getElementById("rightLineHeightInput").value = "1.6";
         }
-        function onMouseUp() {
-          document.removeEventListener('mousemove', onMouseMove);
-          document.removeEventListener('mouseup', onMouseUp);
-          document.body.style.cursor = '';
+      }
+
+      window.addEventListener("DOMContentLoaded", function () {
+        const wrap = document.querySelector(".wrap");
+        const leftContainer = document.querySelector(".left-text");
+        const rightContainer = document.querySelector(".right-text");
+        const leftResizer = document.querySelector(".resizer-left");
+        const rightResizer = document.querySelector(".resizer-right");
+
+        function setInitialWidths() {
+          const wrapRect = wrap.getBoundingClientRect();
+          const half = Math.floor(wrapRect.width / 2);
+          leftContainer.style.width = half + "px";
+          rightContainer.style.width = wrapRect.width - half + "px";
         }
-        document.addEventListener('mousemove', onMouseMove);
-        document.addEventListener('mouseup', onMouseUp);
+        setInitialWidths();
+
+        function setupResizer(resizer, target, other, reverse = false) {
+          resizer.addEventListener("mousedown", function (e) {
+            e.preventDefault();
+            const wrapRect = wrap.getBoundingClientRect();
+            const startX = e.clientX;
+            const startWidth = target.offsetWidth;
+
+            document.body.style.cursor = "ew-resize";
+            function onMouseMove(ev) {
+              let dx = reverse ? startX - ev.clientX : ev.clientX - startX;
+              let newWidth = startWidth + dx;
+              const min = 150;
+              const max = wrapRect.width - min;
+              newWidth = Math.max(min, Math.min(newWidth, max));
+              target.style.width = newWidth + "px";
+              other.style.width = wrapRect.width - newWidth + "px";
+            }
+            function onMouseUp() {
+              document.removeEventListener("mousemove", onMouseMove);
+              document.removeEventListener("mouseup", onMouseUp);
+              document.body.style.cursor = "";
+            }
+
+            document.addEventListener("mousemove", onMouseMove);
+            document.addEventListener("mouseup", onMouseUp);
+          });
+        }
+
+        setupResizer(leftResizer, leftContainer, rightContainer, true);
+        setupResizer(rightResizer, rightContainer, leftContainer, false);
+
+        window.addEventListener("resize", setInitialWidths);
       });
-
-      // 윈도우 리사이즈 시 중앙 유지
-      window.addEventListener('resize', setInitialWidths);
-    });
-
-    function saveAsPDF() {
-      const element = document.querySelector('.wrap');
-      html2pdf().set({
-        margin: 0,
-        filename: 'compare.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
-      }).from(element).save();
-    }
-
-  </script>
-</body>
+    </script>
+  </body>
 </html>
