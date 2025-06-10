@@ -117,6 +117,27 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "KoPub";
+  src: url("KoPub\ Batang_Pro\ Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: light;
+}
+
+@font-face {
+  font-family: "KoPub";
+  src: url("KoPub\ Batang_Pro\ Medium.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KoPub";
+  src: url("KoPub\ Batang_Pro\ Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: bold;
+}
+
 body {
   margin: 0;
   background-color: #000;
