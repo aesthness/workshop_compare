@@ -37,6 +37,9 @@
         <a href="https://aesthness.github.io/workshop_detail/">폰트 실험실</a>
       </nav>
     </aside>
+    
+    <button class="save-image-btn" id="saveAsImageBtn">이미지로 저장</button>
+    
     <div class="wrap">
       <div class="center-blur"></div>
 
@@ -272,6 +275,17 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
+      const saveAsImageBtn = document.getElementById("saveAsImageBtn");
+
+      saveAsImageBtn.addEventListener("click", () => {
+        html2canvas(content, {scale: 2).then((canvas) => {
+          const link = document.createElement("a");
+          link.download = "text-image.png";
+          link.href = canvas.toDataURL("image/png");
+          link.click();
+        });
+      });
+
       const hamburger = document.getElementById("hamburger");
       const sidebar = document.getElementById("sidebar");
       const closeBtn = document.getElementById("closeBtn");
