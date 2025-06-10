@@ -316,7 +316,7 @@ body {
   left: 50%;
   bottom: 32px; /* 하단에서 띄우는 거리 */
   transform: translateX(-50%);
-  min-width: 800px; /* 필요시 조절 */
+  min-width: 900px; /* 필요시 조절 */
   max-width: 90%;
   height: 64px;
   background-color: rgba(255, 255, 255, 0.9);
