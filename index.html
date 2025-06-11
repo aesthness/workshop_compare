@@ -16,29 +16,15 @@
     />
   </head>
   <body>
-    <header class="apple-navbar">
-      <div class="NavLogo">
-        <img
-          src="IconNav.svg"
-          alt="Ink And Paper Logo"
-        />
-        <div class="apple-logo">스크린과 종이 사이</div>
-      </div>
-      <button class="apple-hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </button>
-    </header>
-
-    <aside class="apple-sidebar" id="sidebar">
-      <button class="apple-close" id="closeBtn">×</button>
-      <nav class="apple-menu">
-        <a href="https://aesthness.github.io/workshop_book/">홈</a>
-        <a href="https://aesthness.github.io/workshop_compare/">폰트 비교하기</a>
-        <a href="https://aesthness.github.io/workshop_detail/">폰트 실험실</a>
+    <header>
+      <h2><a href="#home">스크린과 종이 사이</a></h2>
+      <nav class="mainNav">
+        <a href="#home">홈</a>
+        <a href="#compare">폰트 비교하기</a>
+        <a href="#experiment">폰트 실험실</a>
+        <a href="#book">책 보기</a>
       </nav>
-    </aside>
-    
-    <button class="save-image-btn" id="saveAsImageBtn">이미지로 저장</button>
+    </header>
     
     <div class="wrap">
       <div class="center-blur"></div>
@@ -273,162 +259,6 @@
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script>
-      const saveAsImageBtn = document.getElementById("saveAsImageBtn");
-
-      saveAsImageBtn.addEventListener("click", () => {
-        html2canvas(content, {scale: 2).then((canvas) => {
-          const link = document.createElement("a");
-          link.download = "text-image.png";
-          link.href = canvas.toDataURL("image/png");
-          link.click();
-        });
-      });
-
-      const hamburger = document.getElementById("hamburger");
-      const sidebar = document.getElementById("sidebar");
-      const closeBtn = document.getElementById("closeBtn");
-
-      hamburger.addEventListener("click", () => {
-        sidebar.classList.add("active");
-      });
-
-      closeBtn.addEventListener("click", () => {
-        sidebar.classList.remove("active");
-      });
-
-      // (선택) 외부 클릭 시 닫기
-      document.addEventListener("click", (e) => {
-        if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
-          sidebar.classList.remove("active");
-        }
-      });
-      
-      let leftFontSize = 20;
-      let rightFontSize = 20;
-
-      document
-        .getElementById("leftFontSelector")
-        .addEventListener("change", function () {
-          document.getElementById("leftText").style.fontFamily = this.value;
-        });
-      document
-        .getElementById("rightFontSelector")
-        .addEventListener("change", function () {
-          document.getElementById("rightText").style.fontFamily = this.value;
-        });
-
-      function changeFontSize(side, diff) {
-        if (side === "left") {
-          leftFontSize = Math.max(10, leftFontSize + diff);
-          document.getElementById("leftText").style.fontSize =
-            leftFontSize + "px";
-          document.getElementById("leftFontSizeDisplay").textContent =
-            leftFontSize + "px";
-        } else {
-          rightFontSize = Math.max(10, rightFontSize + diff);
-          document.getElementById("rightText").style.fontSize =
-            rightFontSize + "px";
-          document.getElementById("rightFontSizeDisplay").textContent =
-            rightFontSize + "px";
-        }
-      }
-      
-      function changeLetterSpacing(side, diff) {
-        const input = document.getElementById(side + "LetterSpacingInput");
-        let value = parseFloat(input.value) || 0;
-        value = Math.round((value + diff) * 10) / 10;
-        input.value = value;
-        document.getElementById(side + "Text").style.letterSpacing =
-          value + "px";
-      }
-
-      function changeLineHeight(side, diff) {
-        const input = document.getElementById(side + "LineHeightInput");
-        let value = parseFloat(input.value) || 1.6;
-        value = Math.round((value + diff) * 10) / 10;
-        input.value = value;
-        document.getElementById(side + "Text").style.lineHeight = value;
-      }
-
-      function toggleSpacingPopup(side) {
-        const popup = document.getElementById(
-          side === "left" ? "LeftspacingPopup" : "RightspacingPopup"
-        );
-        popup.classList.toggle("hidden");
-      }
-
-      function resetFont(side) {
-        const wrap = document.querySelector(".wrap");
-        const text = document.getElementById(side + "Text");
-        wrap.style.width = "1080px";
-        wrap.style.height = "720px";
-        text.style.fontSize = "20px";
-        text.style.letterSpacing = "0px";
-        text.style.lineHeight = "1.6";
-        text.style.fontFamily = "'Noto Sans KR', sans-serif";
-        if (side === "left") {
-          leftFontSize = 20;
-          document.getElementById("leftFontSizeDisplay").textContent = "20px";
-          document.getElementById("leftLetterSpacingInput").value = "0";
-          document.getElementById("leftLineHeightInput").value = "1.6";
-        } else {
-          rightFontSize = 20;
-          document.getElementById("rightFontSizeDisplay").textContent = "20px";
-          document.getElementById("rightLetterSpacingInput").value = "0";
-          document.getElementById("rightLineHeightInput").value = "1.6";
-        }
-      }
-
-      window.addEventListener("DOMContentLoaded", function () {
-        const wrap = document.querySelector(".wrap");
-        const leftContainer = document.querySelector(".left-text");
-        const rightContainer = document.querySelector(".right-text");
-        const leftResizer = document.querySelector(".resizer-left");
-        const rightResizer = document.querySelector(".resizer-right");
-
-        function setInitialWidths() {
-          const wrapRect = wrap.getBoundingClientRect();
-          const half = Math.floor(wrapRect.width / 2);
-          leftContainer.style.width = half + "px";
-          rightContainer.style.width = wrapRect.width - half + "px";
-        }
-        setInitialWidths();
-
-        function setupResizer(resizer, target, other, reverse = false) {
-          resizer.addEventListener("mousedown", function (e) {
-            e.preventDefault();
-            const wrapRect = wrap.getBoundingClientRect();
-            const startX = e.clientX;
-            const startWidth = target.offsetWidth;
-
-            document.body.style.cursor = "ew-resize";
-            function onMouseMove(ev) {
-              let dx = reverse ? startX - ev.clientX : ev.clientX - startX;
-              let newWidth = startWidth + dx;
-              const min = 150;
-              const max = wrapRect.width - min;
-              newWidth = Math.max(min, Math.min(newWidth, max));
-              target.style.width = newWidth + "px";
-              other.style.width = wrapRect.width - newWidth + "px";
-            }
-            function onMouseUp() {
-              document.removeEventListener("mousemove", onMouseMove);
-              document.removeEventListener("mouseup", onMouseUp);
-              document.body.style.cursor = "";
-            }
-
-            document.addEventListener("mousemove", onMouseMove);
-            document.addEventListener("mouseup", onMouseUp);
-          });
-        }
-
-        setupResizer(leftResizer, leftContainer, rightContainer, true);
-        setupResizer(rightResizer, rightContainer, leftContainer, false);
-
-        window.addEventListener("resize", setInitialWidths);
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
