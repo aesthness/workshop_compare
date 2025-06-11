@@ -166,6 +166,7 @@ body {
 }
 
 header {
+  font-family: 'Georgia', serif;
   position: fixed; /* 고정 위치 */
   top: 0;
   left: 0;
