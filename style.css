@@ -138,6 +138,83 @@
   font-style: bold;
 }
 
+@font-face {
+  font-family: "Spoqa Han Sans";
+  src: url("SpoqaHanSansNeo-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Spoqa Han Sans";
+  src: url("SpoqaHanSansNeo-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: medium;
+}
+
+@font-face {
+  font-family: "Spoqa Han Sans";
+  src: url("SpoqaHanSansNeo-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: nomal;
+}
+
+@font-face {
+  font-family: "Spoqa Han Sans";
+  src: url("SpoqaHanSansNeo-Thin.otf") format("opentype");
+  font-weight: 300;
+  font-style: light;
+}
+
+@font-face {
+  font-family: "Spoqa Han Sans";
+  src: url("SpoqaHanSansNeo-Light.otf") format("opentype");
+  font-weight: 100;
+  font-style: thin;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("Pretendard-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: black;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("Pretendard-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("Pretendard-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: Medium;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("Pretendard-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: nomal;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("Pretendard-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: light;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("Pretendard-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: thin;
+}
+
 body {
   margin: 0;
   background-color: #000;
