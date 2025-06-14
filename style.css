@@ -216,42 +216,42 @@
 }
 
 @font-face {
-  font-family: "Noto Sans KR";
+  font-family: "본고딕";
   src: url("NotoSansKR-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: thin;
 }
 
 @font-face {
-  font-family: "Noto Sans KR";
+  font-family: "본고딕";
   src: url("NotoSansKR-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: light;
 }
 
 @font-face {
-  font-family: "Noto Sans KR";
+  font-family: "본고딕";
   src: url("NotoSansKR-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: nomal;
 }
 
 @font-face {
-  font-family: "Noto Sans KR";
+  font-family: "본고딕";
   src: url("NotoSansKR-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: medium;
 }
 
 @font-face {
-  font-family: "Noto Sans KR";
+  font-family: "본고딕";
   src: url("NotoSansKR-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: bold;
 }
 
 @font-face {
-  font-family: "Noto Sans KR";
+  font-family: "본고딕";
   src: url("NotoSansKR-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: black;
