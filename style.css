@@ -139,38 +139,10 @@
 }
 
 @font-face {
-  font-family: "Spoqa Han Sans";
-  src: url("SpoqaHanSansNeo-Bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: bold;
-}
-
-@font-face {
-  font-family: "Spoqa Han Sans";
-  src: url("SpoqaHanSansNeo-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: medium;
-}
-
-@font-face {
-  font-family: "Spoqa Han Sans";
-  src: url("SpoqaHanSansNeo-Regular.otf") format("opentype");
+  font-family: "아티클";
+  src: url("OnulArticleBuri.otf") format("opentype");
   font-weight: 400;
-  font-style: nomal;
-}
-
-@font-face {
-  font-family: "Spoqa Han Sans";
-  src: url("SpoqaHanSansNeo-Thin.otf") format("opentype");
-  font-weight: 300;
-  font-style: light;
-}
-
-@font-face {
-  font-family: "Spoqa Han Sans";
-  src: url("SpoqaHanSansNeo-Light.otf") format("opentype");
-  font-weight: 100;
-  font-style: thin;
+  font-style: normal;
 }
 
 @font-face {
@@ -189,6 +161,13 @@
 
 @font-face {
   font-family: "Pretendard";
+  src: url("Pretendard-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: semibold;
+}
+
+@font-face {
+  font-family: "Pretendard";
   src: url("Pretendard-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: Medium;
@@ -198,7 +177,7 @@
   font-family: "Pretendard";
   src: url("Pretendard-Regular.otf") format("opentype");
   font-weight: 400;
-  font-style: nomal;
+  font-style: normal;
 }
 
 @font-face {
@@ -233,7 +212,7 @@
   font-family: "본고딕";
   src: url("NotoSansKR-Regular.ttf") format("truetype");
   font-weight: 400;
-  font-style: nomal;
+  font-style: normal;
 }
 
 @font-face {
@@ -241,6 +220,13 @@
   src: url("NotoSansKR-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: medium;
+}
+
+@font-face {
+  font-family: "본고딕";
+  src: url("NotoSansKR-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: semibold;
 }
 
 @font-face {
@@ -255,6 +241,111 @@
   src: url("NotoSansKR-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: black;
+}
+
+@font-face {
+  font-family: "SM3 세고딕";
+  src: url("SM3세고딕-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM3 신중고딕";
+  src: url("SM3신중고딕-01.otf") format("opentype");
+  font-weight: 300;
+  font-style: light;
+}
+
+@font-face {
+  font-family: "SM3 신중고딕";
+  src: url("SM3신중고딕-02.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SM3 신중고딕";
+  src: url("SM3신중고딕-03.otf") format("opentype");
+  font-weight: 500;
+  font-style: medium;
+}
+
+@font-face {
+  font-family: "onul 구보씨";
+  src: url("OnulGubo-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "onul 도담";
+  src: url("OnulDodam-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: light;
+}
+
+@font-face {
+  font-family: "onul 도담";
+  src: url("OnulDodam-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "onul 숨";
+  src: url("OnulSum-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "onul 온하루 sans";
+  src: url("OnulOnharuSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "onul 온하루 sans";
+  src: url("OnulOnharuSerif-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "onul 흑단";
+  src: url("OnulHeugdan-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "onul 흑단";
+  src: url("OnulHeugdan-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "onul 흑단";
+  src: url("OnulHeugdan-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: black;
+}
+
+@font-face {
+  font-family: "onul 흑단";
+  src: url("OnulHeugdan-Regular.otf") format("opentype");
+  font-weight: 900;
+  font-style: black;
+}
+
+@font-face {
+  font-family: "onul 제야";
+  src: url("OnulJeyaRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
