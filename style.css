@@ -343,7 +343,7 @@
 
 @font-face {
   font-family: "onul 제야";
-  src: url("OnulJeyaRegular.otf") format("opentype");
+  src: url("OnulJeyaRegular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
